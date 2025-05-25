@@ -6,7 +6,7 @@
 /*   By: moel-hmo <moel-hmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 15:06:09 by moel-hmo          #+#    #+#             */
-/*   Updated: 2025/05/25 15:34:42 by moel-hmo         ###   ########.fr       */
+/*   Updated: 2025/05/25 16:51:01 by moel-hmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,3 +58,12 @@ int	parsing_arguments(char *av)
 	return (0);
 }
 
+void	fill_the_struct(int ac, char **av, t_philo *philo)
+{
+		philo->number_of_philosophers = ft_atoi(av[1]);
+		philo->time_to_die = ft_atoi(av[2]);
+		philo->time_to_eat = ft_atoi(av[3]);
+		philo->time_to_sleep = ft_atoi(av[4]);
+		if (ac == 6)
+			philo->number_of_times_each_philosopher_must_eat = ft_atoi(av[5]);
+}
