@@ -6,7 +6,7 @@
 /*   By: moel-hmo <moel-hmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 15:06:09 by moel-hmo          #+#    #+#             */
-/*   Updated: 2025/05/25 16:51:01 by moel-hmo         ###   ########.fr       */
+/*   Updated: 2025/05/25 17:37:31 by moel-hmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,6 @@ void	fill_the_struct(int ac, char **av, t_philo *philo)
 		philo->time_to_sleep = ft_atoi(av[4]);
 		if (ac == 6)
 			philo->number_of_times_each_philosopher_must_eat = ft_atoi(av[5]);
+		else 
+			philo->number_of_times_each_philosopher_must_eat = -1;
 }
