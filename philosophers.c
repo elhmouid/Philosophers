@@ -6,7 +6,7 @@
 /*   By: moel-hmo <moel-hmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 14:59:41 by moel-hmo          #+#    #+#             */
-/*   Updated: 2025/05/25 17:34:38 by moel-hmo         ###   ########.fr       */
+/*   Updated: 2025/05/31 17:34:34 by moel-hmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ int main(int ac, char **av)
 		}
 	}
 		fill_the_struct(ac, av, philo);
+		if (check_args(philo))
+			return (1);
 		printf("number of philo is : %d\n", philo->number_of_philosophers);
 		printf("time to die is : %d\n", philo->time_to_die);
 		printf("time to eat is : %d\n", philo->time_to_eat);

@@ -6,11 +6,12 @@
 /*   By: moel-hmo <moel-hmo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 15:06:09 by moel-hmo          #+#    #+#             */
-/*   Updated: 2025/05/25 17:37:31 by moel-hmo         ###   ########.fr       */
+/*   Updated: 2025/05/31 17:33:31 by moel-hmo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
+#include <linux/limits.h>
 
 int ft_atoi(char *str)
 {
@@ -49,6 +50,8 @@ int	parsing_arguments(char *av)
 	int	i;
 
 	i = 0;
+	if (!av)
+		return (1);
 	while (av[i])
 	{
 		if (!ft_isdigit(av[i]))
@@ -68,4 +71,17 @@ void	fill_the_struct(int ac, char **av, t_philo *philo)
 			philo->number_of_times_each_philosopher_must_eat = ft_atoi(av[5]);
 		else 
 			philo->number_of_times_each_philosopher_must_eat = -1;
+}
+int check_args(t_philo *philo)
+{
+	if (philo->number_of_philosophers == 0
+    || philo->time_to_die == 0
+    || philo->time_to_eat == 0
+    || philo->time_to_sleep == 0
+	|| philo->number_of_times_each_philosopher_must_eat == 0)
+	{
+    	printf("Error: Arguments must be greater than zero.\n");
+    	return (1);
+	}
+	return (0);
 }

@@ -18,5 +18,6 @@ typedef struct s_philosophers {
 int	parsing_arguments(char *av);
 int	ft_atoi(char *str);
 void	fill_the_struct(int ac, char **av, t_philo *philo);
+int check_args(t_philo *philo);
 
 #endif
